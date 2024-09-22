@@ -2,7 +2,9 @@
   "name": "@multifronts/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx run-many --target=serve"
+  },
   "private": true,
   "dependencies": {
     "react": "18.3.1",
