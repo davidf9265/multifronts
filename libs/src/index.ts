@@ -1,1 +1,2 @@
-export * from './lib/einzi';
+import Provider from './lib/Provider';
+export { Provider };
