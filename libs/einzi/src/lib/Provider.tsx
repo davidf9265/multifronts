@@ -12,12 +12,10 @@ interface ProviderProps {
 const Provider = ({ children }: ProviderProps) => {
   const store = getStore();
 
-  window.addEventListener('storage', function (event) {
-    console.log('event >>> ', event);
-    if (event.key === uniqueKey) {
-      console.log('localStorage changed:', event.newValue);
-    }
-  });
+  console.log('[INFO] Settings storage listener');
+  window.onstorage = (event) => {
+    console.log('storage', event);
+  };
 
   console.log('store >>> ', store);
   if (!store) {

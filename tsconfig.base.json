@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "einzi": ["libs/einzi/src/index.ts"]
+      "einzi": ["libs/einzi/src/index.ts"],
+      "@tickets/*": ["./apps/tickets/*"],
     }
   },
   "exclude": ["node_modules", "tmp"]
