@@ -1,15 +1,14 @@
-import NxWelcome from './nx-welcome';
-
 import { Route, Routes, Link } from 'react-router-dom';
+import { setStore } from 'einzi';
 
 export function App() {
+  const addTicketToCart = () => {
+    console.log('Ticket added to cart');
+    setStore({ ticket: 'ticket' });
+  };
   return (
     <div>
-      <NxWelcome title="tickets" />
-
-      {/* START: routes */}
-      {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
+      <button onClick={addTicketToCart}>Add to Cart</button>
       <br />
       <hr />
       <br />
