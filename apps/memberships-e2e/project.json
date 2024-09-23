@@ -1,9 +1,0 @@
-{
-  "name": "memberships-e2e",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
-  "sourceRoot": "apps/memberships-e2e/src",
-  "implicitDependencies": ["memberships"],
-  "// targets": "to see all targets run: nx show project memberships-e2e --web",
-  "targets": {}
-}
