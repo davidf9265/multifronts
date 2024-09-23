@@ -1,0 +1,15 @@
+{
+  "name": "Example",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/example/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project Example --web",
+  "targets": {
+    "serve": {
+      "options": {
+        "args": ["--port", "4203"]
+      }
+    }
+  }
+}
