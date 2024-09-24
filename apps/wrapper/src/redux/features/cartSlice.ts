@@ -15,9 +15,7 @@ const persistedStore = JSON.parse(
     persistedStoreString || '{}'
 ) as unknown as RootState;
 const initialState: CartState = {
-    items: persistedStore?.cartReducer?.items || [
-        { producto: 'Producto 1', precio: 100 },
-    ],
+    items: persistedStore?.cartReducer?.items || [],
     total: 0,
 };
 
@@ -30,6 +28,14 @@ export const cartSlice = createSlice({
     reducers: {
         addToStore: (state) => {
             state.items.push({ id: 1, name: 'Product 1', price: 100 });
+        },
+        addToCart: (state, action: PayloadAction<object>) => {
+            state.items.push({ ...action.payload, id: crypto.randomUUID() });
+        },
+        removeFromCart: (state, action: PayloadAction<string>) => {
+            state.items = state.items.filter(
+                (item) => item.id !== action.payload
+            );
         },
         replaceCart: (state, action: PayloadAction<CartState>) => {
             console.log(action.payload);
@@ -47,7 +53,13 @@ export const cartSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { addToStore, changeTotal, cleanStore, replaceCart } =
-    cartSlice.actions;
+export const {
+    addToStore,
+    changeTotal,
+    cleanStore,
+    replaceCart,
+    addToCart,
+    removeFromCart,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;
